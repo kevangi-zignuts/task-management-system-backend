@@ -6,12 +6,15 @@ use App\Models\User;
 use App\Mail\ResetPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class ResetPasswordController extends Controller
 {
     public function resetPassword(Request $request, $token){
+        Log::info($token);
         $request->validate([
             'password' => 'required|confirmed',
         ]);
