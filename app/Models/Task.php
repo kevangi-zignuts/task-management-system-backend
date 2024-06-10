@@ -11,7 +11,7 @@ class Task extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name', 'due_date', 'description', 'created_by', 'updated_by'];
+    protected $fillable = ['name', 'due_date', 'description', 'user_id', 'created_by', 'updated_by'];
 
     public static function boot()
     {

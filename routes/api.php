@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegistrationController;
+use App\Http\Controllers\auth\ResetPasswordController;
 use App\Http\Controllers\auth\ForgotPasswordController;
 
 Route::post('/', [LoginController::class, 'login']);

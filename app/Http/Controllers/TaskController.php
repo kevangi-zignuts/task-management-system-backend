@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
@@ -36,7 +37,9 @@ class TaskController extends Controller
             'due_date' => 'required|date',
             'description' => 'nullable|string|max:255',
         ]);
-        Task::create(array_merge($task, ['user_id' => Auth::id()]));
+        Log::info(Auth::id());
+        $task['user_id'] = Auth::id();
+        Task::create($task);
         return response()->json(['task' => $task], 201);
     }
 

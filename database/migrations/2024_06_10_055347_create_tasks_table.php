@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name', 64);
             $table->date('due_date');
             $table->string('description', 256)->nullable();
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
